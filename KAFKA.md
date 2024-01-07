@@ -13,13 +13,13 @@ brew install kafka
 brew install zookeeper
 
 ## Start the Services
-### Start the ZooKeeper service
+### Start the ZooKeeper service (Suggest doing it in a new terminal)
 bin/zookeeper-server-start.sh config/zookeeper.properties
-### Start the Kafka broker service
+### Start the Kafka broker service  (Suggest doing it in a new terminal)
 bin/kafka-server-start.sh config/server.properties
 
 ## Topic Management
-### Create a topic to store events
+### Create a topic to store events (Suggest doing it in a new terminal)
 bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic quickstart-events
 ##### To change parameters, modify the file \"config/server.properties\" in the Kafka directory
 
@@ -28,13 +28,13 @@ bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 
 ## Produce Events
-### Write events into the topic
+### Write events into the topic  (Suggest doing it in a new terminal)
 bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092  
 Event1  
 Event2  
 
 ## Consume Events
-### Read the events
+### Read the events  (Suggest doing it in a new terminal)
 #### From the beginning
 bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 #### Only new events
